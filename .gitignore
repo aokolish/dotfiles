@@ -9,6 +9,7 @@
 .snooctl/
 .ssh/
 .tilt-dev/
+.vim/bundle
 .viminfo
 .zsh/
 .zsh_history
