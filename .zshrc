@@ -1,3 +1,9 @@
+# Set custom prompt
+setopt PROMPT_SUBST
+autoload -U promptinit
+promptinit
+prompt aeo
+
 # Add paths
 export PATH="$HOME/bin:$PATH"
 
