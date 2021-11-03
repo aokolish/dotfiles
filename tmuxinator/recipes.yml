@@ -1,8 +1,0 @@
-# ~/.tmuxinator/recipes.yml
-
-project_name: recipes
-project_root: ~/Dropbox/code/sites/recipes
-tabs:
-  - vim: vim
-  - server: while [ ! -S .zeus.sock ]; do sleep 0.2; done && zeus server
-  - console: zeus start
