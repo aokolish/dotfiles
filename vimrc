@@ -266,6 +266,8 @@ call MapCR()
 nnoremap <leader>S :call RunNearestTest()<cr>
 nnoremap <leader>a :call RunTests('')<cr>
 
+" nnoremap <cr> :w \| !clear && ruby %<cr>
+
 function! RunTestFile(...)
     if a:0
         let command_suffix = a:1
