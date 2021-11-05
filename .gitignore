@@ -3,12 +3,15 @@
 .config/
 .docker/
 .dropbox/
+.history
 .helm/
 .kube/
+.netrc
 .python_history
 .snooctl/
 .ssh/
 .tilt-dev/
+.vagrant.d/
 .vim/bundle
 .viminfo
 .zsh_history
@@ -24,3 +27,4 @@ Music/
 Pictures/
 Public/
 src/
+VirtualBox VMs/
