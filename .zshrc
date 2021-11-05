@@ -20,3 +20,6 @@ export SAVEHIST=$HISTSIZE
 
 # Use vim as the editor
 export EDITOR=vi
+
+# set up autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
