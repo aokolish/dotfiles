@@ -101,7 +101,7 @@ Plugin 'tpope/vim-endwise'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-map <Leader>g :.Gbrowse<CR>
+map <Leader>g :.GBrowse<CR>
 nnoremap <Leader>n :noh<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
@@ -123,6 +123,8 @@ endfunction
 " Fuzzy select one of those. Open the selected file with :e.
 let find_command = "find . -not \( -path './*npm-packages-offline-cache' -prune \) -not \( -path './*sass-cache' -prune \) -not \( -path './*node_modules' -prune \) -not \( -path './*tmp' -prune \) -not \( -path './*git' -prune \) -type f -and -not -iname '*.jpg' -and -not -iname '*.png' -and -not -iname '*.svg' -and -not -iname '*.keep' -and -not -iname '*.woff' -and -not -iname '*.woff2' -and -not -iname '*.ds_store' -and -not -iname '*.pdf' | cut -c 3- "
 nnoremap <leader>t :call SelectaCommand(escape(find_command, "()"), "", ":e")<cr>
+
+let g:github_enterprise_urls = ['https://github.snooguts.net']
 
 " CTags
 " consider remapping this to something else
