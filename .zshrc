@@ -23,3 +23,5 @@ export EDITOR=vi
 
 # set up autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+export AWS_SDK_LOAD_CONFIG=true
