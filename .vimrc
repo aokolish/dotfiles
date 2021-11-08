@@ -90,7 +90,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/scratch.vim'
@@ -356,27 +355,18 @@ endfunction
 function! AlternateForCurrentFile()
   let current_file = expand("%")
   let new_file = current_file
-  let in_spec = match(current_file, '^spec/') != -1
-  let going_to_spec = !in_spec
-  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<workers\>') != -1 || match(current_file, '\<views\>') != -1 || match(current_file, '\<helpers\>') != -1
-  if going_to_spec
-    if in_app
-      echo "in app ------"
-      let new_file = substitute(new_file, 'app/', '', '')
-    end
-    let new_file = substitute(new_file, '\.e\?rb$', '_spec.rb', '')
-    let new_file = 'spec/' . new_file
+  let in_test = match(current_file, '^tests/') != -1
+  let going_to_test = !in_test
+  if going_to_test
+    let new_file = substitute(new_file, expand('%:t'), 'test_' . expand('%:t'), '')
+    let new_file = 'tests/' . new_file
   else
-    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
-    let new_file = substitute(new_file, '^spec/', '', '')
-    if in_app
-      let new_file = 'app/' . new_file
-    end
+    let new_file = substitute(new_file, 'test_', '', '')
+    let new_file = substitute(new_file, '^tests/', '', '')
   endif
   return new_file
 endfunction
-" nnoremap <leader>. :call OpenTestAlternate()<cr>
-nnoremap <leader>. :A<cr>
+nnoremap <leader>. :call OpenTestAlternate()<cr>
 
 let g:ackprg = "rg --vimgrep --no-heading --hidden -g '!*git' -T pdf -T svg"
 map <leader>a :Ack!<space>
