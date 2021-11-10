@@ -7,6 +7,10 @@ prompt aeo
 # Add paths
 export PATH="$HOME/bin:$PATH"
 
+# Initialize completion
+autoload -U compinit
+compinit -D
+
 # Colorize terminal
 alias ls='ls -G'
 alias ll='ls -lG'
