@@ -1,14 +1,17 @@
-.aws/
 .CFUserTextEncoding
+.Trash/
+.aws/
 .config/
 .docker/
 .dropbox/
 .gitconfig-work
-.history
 .helm/
+.history
 .kube/
+.lesshst
 .netrc
 .python_history
+.rkube/
 .snooctl/
 .ssh/
 .tilt-dev/
@@ -17,7 +20,6 @@
 .viminfo
 .zsh_history
 .zsh_sessions/
-.Trash/
 Applications/
 Desktop/
 Documents/
@@ -28,5 +30,5 @@ Movies/
 Music/
 Pictures/
 Public/
-src/
 VirtualBox VMs/
+src/
