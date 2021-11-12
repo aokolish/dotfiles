@@ -47,3 +47,5 @@
 	verbose = true
 [includeIf "gitdir:~/src/"]
   path = ~/.gitconfig-work
+[pull]
+	rebase = true
