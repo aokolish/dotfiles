@@ -14,6 +14,9 @@ compinit -D
 # Colorize terminal
 alias ls='ls -G'
 alias ll='ls -lG'
+
+alias c='clear'
+
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
