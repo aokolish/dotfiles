@@ -29,3 +29,6 @@ export EDITOR=vi
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 export AWS_SDK_LOAD_CONFIG=true
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
