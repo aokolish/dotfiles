@@ -49,3 +49,5 @@
   path = ~/.gitconfig-work
 [pull]
 	rebase = true
+[init]
+	templatedir = ~/.git_template
