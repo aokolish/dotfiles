@@ -257,7 +257,7 @@ endfunction
 "    enter from non-test files, as described above.
 "
 " 4. Sometimes you don't want contextual test running. In that case, there's
-"    <leader>a, which runs everything.
+"    <leader>T, which runs everything.
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! MapCR()
@@ -265,7 +265,7 @@ function! MapCR()
 endfunction
 call MapCR()
 nnoremap <leader>S :call RunNearestTest()<cr>
-nnoremap <leader>a :call RunTests('')<cr>
+nnoremap <leader>T :call RunTests('')<cr>
 
 " nnoremap <cr> :w \| !clear && ruby %<cr>
 
