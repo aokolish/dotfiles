@@ -10,3 +10,4 @@ tmux-*.log
 custom_plan.rb
 zeus.json
 _script/
+bin/test
