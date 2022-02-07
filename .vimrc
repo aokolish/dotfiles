@@ -288,27 +288,11 @@ function! RunTestFile(...)
     " it's a test).
     if in_test_file
         call SetTestFile(command_suffix)
-    elseif !exists("t:grb_test_file")
+    elseif !exists("t:aeo_test_file")
         return
     end
 
-    " Are we in a monorepo?
-    let in_monorepo = match(t:grb_test_file, '^spec') != 0
-
-    if in_monorepo
-      let parent_dir = substitute(t:grb_test_file, '/spec/.\+$', '', '')
-      let previous_dir = getcwd()
-      let test_path = substitute(t:grb_test_file, '.\+spec\/', 'spec\/', '')
-
-      " 1. change to the project dir
-      " 2. run the spec
-      " 3. cd back to where we came from
-      exec ':cd ' . parent_dir
-      call RunTests(test_path)
-      exec ':cd ' . previous_dir
-    else
-      call RunTests(t:grb_test_file)
-    end
+    call RunTests(t:aeo_test_file)
 endfunction
 
 function! RunNearestTest()
@@ -318,7 +302,7 @@ endfunction
 
 function! SetTestFile(command_suffix)
     " Set the spec file that tests will be run for.
-    let t:grb_test_file=@% . a:command_suffix
+    let t:aeo_test_file=@% . a:command_suffix
 endfunction
 
 function! RunTests(filename)
@@ -327,26 +311,11 @@ function! RunTests(filename)
       :w
     end
 
-    " Rspec binstub
-    if filereadable("bin/rspec")
-      exec ":!bin/rspec " . a:filename
-    " Fall back to the .test-commands pipe if available, assuming someone
-    " is reading the other side and running the commands
-    elseif filewritable(".test-commands")
-      let cmd = 'rspec --color --format progress --require "~/lib/vim_rspec_formatter" --format VimFormatter --out tmp/quickfix'
-      exec ":!echo " . cmd . " " . a:filename . " > .test-commands"
-
-      " Write an empty string to block until the command completes
-      sleep 100m " milliseconds
-      :!echo > .test-commands
-      redraw!
-    " Fall back to a blocking test run with Bundler
-    elseif filereadable("bin/rspec")
-      exec ":!bin/rspec --color " . a:filename
-    elseif filereadable("Gemfile") && strlen(glob("spec/**/*.rb"))
-      exec ":!bundle exec rspec --color " . a:filename . " " . "&& cd .."
-    elseif filereadable("Gemfile") && strlen(glob("test/**/*.rb"))
-      exec ":!bin/rails test " . a:filename
+    if filereadable("bin/test")
+      exec ":!bin/test " . a:filename
+    " Fall back
+    else
+      exec ":!py.test -v " . a:filename
     end
 endfunction
 
