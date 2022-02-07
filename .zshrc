@@ -35,3 +35,7 @@ export AWS_SDK_LOAD_CONFIG=true
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
