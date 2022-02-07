@@ -12,6 +12,8 @@
 .kube/
 .lesshst
 .netrc
+.pip/
+.pyenv/
 .python_history
 .rkube/
 .snooctl/
