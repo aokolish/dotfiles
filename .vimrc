@@ -272,7 +272,8 @@ call MapCR()
 nnoremap <leader>S :call RunNearestTest()<cr>
 nnoremap <leader>T :call RunTests('')<cr>
 
-" nnoremap <cr> :w \| !clear && ruby %<cr>
+" write and run the current file
+" nnoremap <cr> :w \| !clear && python3 %<cr>
 
 function! RunTestFile(...)
     if a:0
