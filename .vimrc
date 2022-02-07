@@ -13,6 +13,9 @@ set spell spelllang=en_us
 set ruler
 syntax on
 
+" would python be good enough? maybe I don't need that plugin...
+autocmd BufNewFile,BufRead *.tilt set syntax=starlark
+
 set undofile
 set undodir=~/.vim/undodir
 
@@ -95,6 +98,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/scratch.vim'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-endwise'
+Plugin 'cappyzawa/starlark.vim'
+Plugin 'solarnz/thrift.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
