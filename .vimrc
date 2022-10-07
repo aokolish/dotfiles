@@ -125,7 +125,7 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-let find_command = "find . -not \( -path './*tmp' -prune \) -not \( -path './*git' -prune \) -type f -and -not -iname '*.jpg' -and -not -iname '*.png' -and -not -iname '*.svg' -and -not -iname '*.keep' -and -not -iname '*.ds_store' | cut -c 3- "
+let find_command = "git ls-files"
 nnoremap <leader>t :call SelectaCommand(escape(find_command, "()"), "", ":e")<cr>
 
 let g:github_enterprise_urls = ['https://github.snooguts.net']
