@@ -100,6 +100,8 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-endwise'
 Plugin 'cappyzawa/starlark.vim'
 Plugin 'solarnz/thrift.vim'
+Plugin 'hashivim/vim-terraform'
+Plugin 'psf/black'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,6 +109,8 @@ filetype plugin indent on    " required
 
 map <Leader>g :.GBrowse<CR>
 nnoremap <Leader>n :noh<CR>
+
+nnoremap <Leader>b :Black<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
