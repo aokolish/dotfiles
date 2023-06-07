@@ -6,9 +6,12 @@
 .docker/
 .dropbox/
 .gitconfig-work
+.gitcookies
 .helm/
 .history
 .idlerc/
+.infrared/
+.ipython/
 .kube/
 .lesshst
 .netrc
@@ -17,10 +20,13 @@
 .python_history
 .rkube/
 .snooctl/
+.snoologin/
 .ssh/
 .terraform.d/
 .tilt-dev/
+.tsh/
 .vagrant.d/
+.vim/black/
 .vim/bundle
 .vim/spell/
 .viminfo
