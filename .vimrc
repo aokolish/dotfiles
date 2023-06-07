@@ -277,7 +277,7 @@ nnoremap <leader>S :call RunNearestTest()<cr>
 nnoremap <leader>T :call RunTests('')<cr>
 
 " write and run the current file
-" nnoremap <cr> :w \| !clear && python3 %<cr>
+" nnoremap <cr> :w \| !clear && python %<cr>
 
 function! RunTestFile(...)
     if a:0
