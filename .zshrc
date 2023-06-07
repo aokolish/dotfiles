@@ -17,6 +17,8 @@ alias ll='ls -lG'
 
 alias c='clear'
 
+alias k='kubectl'
+
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
