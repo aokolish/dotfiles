@@ -387,8 +387,7 @@ function! FindAndReplace()
     " eventignore-=Syntax enables syntax highlighting w/argdo
     :exec "argdo set eventignore-=Syntax \| %s/" . find_this ."/" . replace_with . "/gc " . "\| w"
 endfunction
-"map <leader>f :call FindAndReplace()<cr>
-map <leader>f :!flog %<cr>
+map <leader>f :call FindAndReplace()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SHORTCUT TO REFERENCE CURRENT FILE'S PATH IN COMMAND LINE MODE
