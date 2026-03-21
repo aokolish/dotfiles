@@ -41,3 +41,4 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+export PATH="$HOME/.local/bin:$PATH"
