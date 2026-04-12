@@ -2,7 +2,10 @@
 .Trash/
 .aws/
 .cache/
+.claude.json
+.claude/
 .config/
+.cursor/
 .docker/
 .dropbox/
 .gitconfig-work
@@ -14,6 +17,7 @@
 .ipython/
 .kube/
 .lesshst
+.local/
 .netrc
 .pip/
 .pyenv/
@@ -30,6 +34,7 @@
 .vim/bundle
 .vim/spell/
 .viminfo
+.vscode/
 .zprofile
 .zprofile.pysave
 .zsh_history
@@ -46,7 +51,6 @@ My Drive/
 Pictures/
 Public/
 VirtualBox VMs/
+WKO5/
 src/
 study/
-.vscode/
-WKO5/
