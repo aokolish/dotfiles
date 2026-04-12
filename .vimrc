@@ -57,6 +57,8 @@ augroup vimrcEx
 augroup END
 
 set nowrap
+set linebreak
+set breakindent
 
 " Searching
 set hlsearch
