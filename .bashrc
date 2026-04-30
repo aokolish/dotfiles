@@ -88,3 +88,5 @@ export NVM_DIR="/Users/aokolish/.nvm"
 export RUBY_GC_TUNE_VERBOSE=0
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
