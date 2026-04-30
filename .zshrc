@@ -60,4 +60,5 @@ eval "$(direnv hook zsh)"
 # opencode
 export PATH=/Users/alexokolish/.opencode/bin:$PATH
 
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.secrets.zsh ]] && source ~/.secrets.zsh
