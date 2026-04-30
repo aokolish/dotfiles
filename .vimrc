@@ -15,6 +15,7 @@ syntax on
 
 " would python be good enough? maybe I don't need that plugin...
 autocmd BufNewFile,BufRead *.tilt set syntax=starlark
+autocmd BufNewFile,BufRead *.mdc set syntax=markdown
 
 set undofile
 set undodir=~/.vim/undodir
@@ -91,6 +92,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-dispatch'
@@ -104,6 +106,20 @@ Plugin 'cappyzawa/starlark.vim'
 Plugin 'solarnz/thrift.vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'psf/black'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
+" use grip
+let vim_markdown_preview_github=1
+let vim_markdown_preview_toggle=0
+
+function! Vim_Markdown_Preview_Foreground()
+  let b:curr_file = expand('%:p')
+  call system('grip "' . b:curr_file . '" --export /tmp/vim-markdown-preview.html --title vim-markdown-preview.html')
+  call system('open /tmp/vim-markdown-preview.html')
+endfunction
+
+"autocmd BufWritePost *.markdown,*.md :call Vim_Markdown_Preview_Foreground()
+autocmd Filetype markdown,md map <buffer> <Leader>m :call Vim_Markdown_Preview_Foreground()<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,7 +128,7 @@ filetype plugin indent on    " required
 map <Leader>g :.GBrowse<CR>
 nnoremap <Leader>n :noh<CR>
 
-nnoremap <Leader>b :Black<CR>
+"nnoremap <Leader>b :Black<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
@@ -191,7 +207,7 @@ set showcmd
 set nofoldenable
 
 set background=dark
-color solarized
+color dracula
 
 nnoremap <leader><leader> <c-^>
 
@@ -240,7 +256,7 @@ function! PromoteToLet()
   :normal ==
 endfunction
 :command! PromoteToLet :call PromoteToLet()
-:map <leader>p :PromoteToLet<cr>
+":map <leader>p :PromoteToLet<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS

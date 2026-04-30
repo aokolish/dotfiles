@@ -1,3 +1,5 @@
+.direnv
+.envrc
 powder
 tags
 .DS_Store

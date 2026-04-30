@@ -23,6 +23,7 @@
 .pyenv/
 .python_history
 .rkube/
+.secrets
 .snooctl/
 .snoologin/
 .ssh/
