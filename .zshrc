@@ -55,7 +55,7 @@ eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 export PATH="$HOME/.local/bin:$PATH"
 
-eval "$(direnv hook zsh)"
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
 
 # opencode
 export PATH=/Users/alexokolish/.opencode/bin:$PATH
